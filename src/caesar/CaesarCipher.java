@@ -11,7 +11,7 @@ public class CaesarCipher {
 		
 
 		for (int i=0; i<plainText.length(); i++) {
-			if (plainText.charAt(i) != ' ') {
+			if (plainText.charAt(i) != 'd') {
   				index = alpha.indexOf(plainText.charAt(i));
   				keyAdded = (index + key) % alpha.length();
   				secretText = secretText + alpha.charAt(keyAdded);

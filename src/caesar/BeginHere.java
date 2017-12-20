@@ -7,9 +7,14 @@ import javax.swing.JOptionPane;
 public class BeginHere {
 
 	public static void main(String[] args) {
+
+		
 		/* Doug's example of drop-down JOP,with adds by Mr. M*/
 		//Object is top class in Java, used when you are not sure what type might
 		// using a String, int, class object, or what? -- so use Object [] array to
+		Boolean StopLoop = false;
+		
+		while(StopLoop == false) {
 		Object[] selectionsArray = {"Encoder", "Decoder", "Cracker", "Exit"};
 		String showFirst = "Encoder";
 		String selection = (String) JOptionPane.showInputDialog(
@@ -39,13 +44,12 @@ public class BeginHere {
 					"We are now in the Cracker switch block - add some code!");
 			break;
 		case "Exit":
-			JOptionPane.showMessageDialog(null,
-					"We are now in the Exit switch block - so add some code already to get us out of here!");
 			System.exit(0);
 			break;
 		default:
 			JOptionPane.showMessageDialog(null,
 					"We are now in the Unknown Case or Cancelled switch block - what do you want to do?");
+		}
 		}
 		//after the 'break' continue with the following code
 		
@@ -62,12 +66,14 @@ public class BeginHere {
 		String plainText = JOptionPane.showInputDialog(msg).toLowerCase();
 		//String plainText = kbd.nextLine().toLowerCase();
 		
-		System.out.println("Please enter the key: ");
-		int key = kbd.nextInt();
+		msg = "Please enter the key: ";
+		int key = Integer.parseInt(JOptionPane.showInputDialog(msg));
+		//int key = kbd.nextInt();
 		//System.out.println("Your key is: " + key);
 		
 		String codedText = myCipher.encode(plainText, key);
-		System.out.println("Your secret message is: " + codedText);
+		
+		JOptionPane.showMessageDialog(null, "Your secret message is: " + codedText);
 
 	}
 
